@@ -39,7 +39,7 @@
 /* USER CODE BEGIN PM */
 
 /* USER CODE END PM */
-
+extern int flag;
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 
@@ -198,6 +198,50 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32l4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line[9:5] interrupts.
+  */
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_8)) //Adding a fingerprint
+{
+	flag = 1;
+}
+if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_9)) //Deleting a fingerprint
+{
+	flag = 2;
+}
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_9);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line[15:10] interrupts.
+  */
+void EXTI15_10_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_10)) // Check Access button
+{	
+	flag = 3;
+}
+if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_11)) // Up button
+{
+	flag = 4;
+}
+  /* USER CODE END EXTI15_10_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
+}
 
 /* USER CODE BEGIN 1 */
 
