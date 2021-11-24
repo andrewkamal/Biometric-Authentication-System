@@ -29,11 +29,19 @@
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
-
+int flag = 0; // 1 Adding 2 Deleting 3 Checking 4 Up
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 /* USER CODE END PD */
+void addFP()
+{
+	
+}
 
+void delFP()
+{
+	
+}
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
@@ -104,7 +112,26 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		switch(flag)
+		{
+			case 0:
+				continue;
+				break;
+			case 1:
+				addFP();
+				break;
+			case 2:
+				delFP();
+				break;
+			case 3:
+				checkAccess();
+				break;
+			case 4:
+				mvUP();
+				break;
+			default:
+				continue;
+		}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -298,9 +325,16 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PA8 PA9 PA10 PA11 */
   GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
