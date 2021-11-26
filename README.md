@@ -24,7 +24,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 - TeraTerm
 
 ## - System Design
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/System%20Diagram%20New.png)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Updated%20Diagram.png)
 
 ## - Activity Design
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity%20Diagram.png)
