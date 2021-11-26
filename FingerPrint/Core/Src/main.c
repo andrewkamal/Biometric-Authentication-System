@@ -22,7 +22,31 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+static inline void debounce(void)
+{
+	// Counter for number of equal states
+	static uint8_t count = 0;
+	// Keeps track of current (debounced) state
+	static uint8_t button_state = 0;
+	// Check if button is high or low for the moment
+	uint8_t current_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
+	if (current_state != button_state) 
+	{
+		// Button state is about to be changed, increase counter
+		count++;
+		if (count >= 5) {
+			// The button have not bounced for some checks, change state
+			button_state = current_state;
+			if (current_state != 0) {
+				shoot=1;
+			}
+			count = 0;
+		}
+	} else {
+	// Reset counter
+		count = 0;
+	}
+}
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,27 +136,37 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		switch(flag)
-		{
-			case 0:
-				continue;
-				break;
-			case 1:
-				addFP();
-				break;
-			case 2:
-				delFP();
-				break;
-			case 3:
-				checkAccess();
-				break;
-			case 4:
-				mvUP();
-				break;
-			default:
-				continue;
-		}
+		
+	  
     /* USER CODE BEGIN 3 */
+	  
+	  debounce();
+	  if(shoot)
+	  {
+		HAL_UART_Transmit(&huart2, &y, 1, 10000);
+		shoot=0;
+	  }
+	  
+	 switch(flag)
+	 {
+		case 0:
+			continue;
+			break;
+		case 1:
+			addFP();
+			break;
+		case 2:
+			delFP();
+			break;
+		case 3:
+			checkAccess();
+			break;
+		case 4:
+			mvUP();
+			break;
+		default:
+			continue;
+	 }
   }
   /* USER CODE END 3 */
 }
