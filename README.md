@@ -10,9 +10,8 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 ## - Hardware Requirements
 - ESP32
 - Nucleo STM32 Board
-- Electric Solenoid Lock 12V
 - Passive Buzzer
-- DS3231 (RTC)
+- JM101-B FingerPrint Sensor
 - LCD
 - Push Buttons
 - LEDs
