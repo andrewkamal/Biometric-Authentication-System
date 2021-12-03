@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp --branchpatch=sdcomp-29491-629360
+"fraud_detection\startup_stm32l432xx.o"
+"fraud_detection\main.o"
+"fraud_detection\stm32l4xx_it.o"
+"fraud_detection\stm32l4xx_hal_msp.o"
+"fraud_detection\stm32l4xx_hal_tim.o"
+"fraud_detection\stm32l4xx_hal_tim_ex.o"
+"fraud_detection\stm32l4xx_hal.o"
+"fraud_detection\stm32l4xx_hal_i2c.o"
+"fraud_detection\stm32l4xx_hal_i2c_ex.o"
+"fraud_detection\stm32l4xx_hal_rcc.o"
+"fraud_detection\stm32l4xx_hal_rcc_ex.o"
+"fraud_detection\stm32l4xx_hal_flash.o"
+"fraud_detection\stm32l4xx_hal_flash_ex.o"
+"fraud_detection\stm32l4xx_hal_flash_ramfunc.o"
+"fraud_detection\stm32l4xx_hal_gpio.o"
+"fraud_detection\stm32l4xx_hal_dma.o"
+"fraud_detection\stm32l4xx_hal_dma_ex.o"
+"fraud_detection\stm32l4xx_hal_pwr.o"
+"fraud_detection\stm32l4xx_hal_pwr_ex.o"
+"fraud_detection\stm32l4xx_hal_cortex.o"
+"fraud_detection\stm32l4xx_hal_exti.o"
+"fraud_detection\system_stm32l4xx.o"
+--strict --scatter "fraud_detection\fraud_detection.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "fraud_detection.map" -o fraud_detection\fraud_detection.axf
