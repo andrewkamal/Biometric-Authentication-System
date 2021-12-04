@@ -31,7 +31,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 ## - JM101B Sensor
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller sensor transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the sensor and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
 ## The communication between the STM32 and the sensor:
-
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/FP_.jpg)
 ## - PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
 
