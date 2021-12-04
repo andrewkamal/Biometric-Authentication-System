@@ -61,7 +61,8 @@ We also need to mention that in the STM32 CubeMx configuration, the Prescaler in
 
 ## - ESP32 and Telegram 
 ESP32 module is used in the project to support WIFI connectivity and enable the communication with the admin of the system at all times. The admin of the system will be notified through the ESP32 module of any fraud activity detected at the site being monitored. Fraud activity is indicated by having three unsuccessful fingerprint scans in a row. In this case, the STM32 μC will set a GPIO pin (flag pin) to one once the count of unsuccessful scans reaches 3. This flag pin will be the input of a GPIO pin in the ESP32 module and will be read continuously in the code of the ESP module to push a notification to the admin through Telegram to alert him of what’s happening at the site as shown in the diagram below.
- ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/esp.png)
+
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/esp.png)
 
 The admin also has the ability to send different commands to the system to control a number of physical elements that exist at the facility. For example, the admin can send a command to turn on all the emergency LEDs at the facility to alert the security staff at any point in time. 
 The admin can also send a command to declare a normal state at the site. Additionally, he can inquire about the state of the system at any point in time to see whether it’s in an emergency state or a normal state.
