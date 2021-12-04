@@ -15,6 +15,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 - LCD
 - Push Buttons
 - LEDs
+- PN532
 
 ## - Software Requirements
 
