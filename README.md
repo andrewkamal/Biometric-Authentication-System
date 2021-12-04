@@ -45,7 +45,15 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follow
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Command.PNG)
 
+Then we checked if the Sensor responded with success or failure by checking the byte 9 from the Response packet.
+Success → 0x00
+Failure to generate feature → 0x02
 
+## SOLVED ISSUES: 
+- We have been facing an issue reading the acknowledgment packet because we used to receive one byte at a time while the acknowledgment frame gets generated as a whole packet and should be received all at once. 
+- The LCD was defaulted with low contrast, so the displayed characters were not able to be seen. To solve this problem, we used a potentiometer to increase its contrast to be able to see the characters. 
+
+## CubMX project: 
 
 ## - PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
