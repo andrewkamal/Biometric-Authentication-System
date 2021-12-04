@@ -33,6 +33,14 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/FP_.jpg)
 ## The communication between the STM32 and the sensor:
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
+
+## Supported commands:
+1- Registration (Add Fingerprint)
+2- Fingerprint verification
+3- Delete Fingerprint by ID
+4- Delete all Fingerprints
+
+
 ## - PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
 
