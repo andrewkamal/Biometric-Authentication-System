@@ -54,6 +54,8 @@ Failure to generate feature → 0x02
 - The LCD was defaulted with low contrast, so the displayed characters were not able to be seen. To solve this problem, we used a potentiometer to increase its contrast to be able to see the characters. 
 
 ## CubMX project: 
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/CubMX.PNG)
+After interfacing the sensor with the STM32 we interface our system with LCD to act as a user interface. 
 
 ## - PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
