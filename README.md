@@ -52,9 +52,8 @@ The admin also has the ability to send different commands to the system to contr
 The admin can also send a command to declare a normal state at the site. Additionally, he can inquire about the state of the system at any point in time to see whether it’s in an emergency state or a normal state.
 
 Supported commands:
+
 Alert_security_staff
-
 Declare_normal_state
-
 Get_state
 
