@@ -35,10 +35,10 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
 
 ## Supported commands:
-1- Registration (Add Fingerprint)
-2- Fingerprint verification
-3- Delete Fingerprint by ID
-4- Delete all Fingerprints
+- Registration (Add Fingerprint)
+- Fingerprint verification
+- Delete Fingerprint by ID
+- Delete all Fingerprints
 
 
 ## - PN532 Sensor
