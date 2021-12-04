@@ -4,7 +4,9 @@
 - Nada Badawy
 - Rinal Mohamed
 ## - Project Idea
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/door%20lock.jpg)
+
 A biometric sytem that takes optical fingerprint as input to authenticate the user and in return open an electric lock, as well as register the time the user came in.
 In addtion, we alert the admin using an alarm and a wifi chip if there is a user trying to access the facility with three times unrecognized fingerprints scans in a row.
 ## - Hardware Requirements
@@ -22,17 +24,23 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 - Stm32CubeMX
 - Keil uVision
 - TeraTerm
+- Arduino IDE
+
 
 ## - System Design
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/updated_system_diagram.png)
 
 ## - Activity Design
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity_diagram.png)
 
 ## - JM101B Sensor
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller sensor transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the sensor and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/FP_.jpg)
 ## The communication between the STM32 and the sensor:
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
 
 ## Supported commands:
@@ -42,7 +50,8 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 - Delete all Fingerprints
 
 ## Implemented and Tested commands:
-We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follow
+We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follows
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Command.PNG)
 
 Then we checked if the Sensor responded with success or failure by checking the byte 9 from the Response packet.
@@ -54,6 +63,7 @@ Failure to generate feature → 0x02
 - The LCD was defaulted with low contrast, so the displayed characters were not able to be seen. To solve this problem, we used a potentiometer to increase its contrast to be able to see the characters. 
 
 ## CubMX project: 
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/CubMX.PNG)
 
 After interfacing the sensor with the STM32 we interface our system with LCD to act as a user interface. 
