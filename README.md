@@ -35,15 +35,16 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 ## The communication between the STM32 and the sensor:
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
 
-## Implemented and Tested commands:
-We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follow
-
-
 ## Supported commands:
 - Registration (Add Fingerprint)
 - Fingerprint verification
 - Delete Fingerprint by ID
 - Delete all Fingerprints
+
+## Implemented and Tested commands:
+We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follow
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Command.PNG)
+
 
 
 ## - PN532 Sensor
