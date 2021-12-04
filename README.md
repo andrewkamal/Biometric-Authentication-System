@@ -27,7 +27,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 updated_system_diagram.png)
 
 ## - Activity Design
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity_diagram.png)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/updated_system_diagram.png)
 
 ## - JM101B Sensor
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller sensor transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the sensor and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
