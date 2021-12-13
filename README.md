@@ -12,7 +12,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 ## Hardware Requirements
 - ESP32
 - Nucleo STM32 Board
-- Passive Buzzer
+- Potentiometer
 - JM101-B FingerPrint Sensor
 - LCD
 - Push Buttons
@@ -187,4 +187,7 @@ Alert_security_staff
 Declare_normal_state
 
 Get_state
+
+## References
+
 
