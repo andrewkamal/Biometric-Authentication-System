@@ -1,15 +1,15 @@
 # Biometric-Authentication-System
-## - Group Members
+## Group Members
 - Andrew Fahmy
 - Nada Badawy
 - Rinal Mohamed
-## - Project Idea
+## Project Idea
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/door%20lock.jpg)
 
 A biometric sytem that takes optical fingerprint as input to authenticate the user and in return open an electric lock, as well as register the time the user came in.
 In addtion, we alert the admin using an alarm and a wifi chip if there is a user trying to access the facility with three times unrecognized fingerprints scans in a row.
-## - Hardware Requirements
+## Hardware Requirements
 - ESP32
 - Nucleo STM32 Board
 - Passive Buzzer
@@ -19,7 +19,7 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 - LEDs
 - PN532
 
-## - Software Requirements
+## Software Requirements
 
 - Stm32CubeMX
 - Keil uVision
@@ -27,15 +27,15 @@ In addtion, we alert the admin using an alarm and a wifi chip if there is a user
 - Arduino IDE
 
 
-## - System Design
+## System Design
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/updated_system_diagram.png)
 
-## - Activity Design
+## Activity Design
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity_diagram.png)
 
-## - JM101B Sensor
+## JM101B Sensor
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the microcontroller and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/FP_.jpg)
@@ -49,6 +49,91 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 - Delete Fingerprint by ID
 - Delete all Fingerprints
 
+## Add FingerPrint
+```
+lcd_clear();
+HAL_Delay(100);
+        // Notify the user to press
+lcd_send_string("ADD FINGER");
+   HAL_Delay(3000);
+    lcd_clear();
+ // send the command packet to the sensor
+   FPM10A_Cmd_Get_Img();
+HAL_Delay(100);
+ // Rescieve the respond packet from the sensor through UART2
+FPM10A_Receive_Data(12);
+HAL_Delay(100);
+ // check if the data recieved successfully
+if(FPM10A_RECEICE_BUFFER[9]==0)
+{
+HAL_Delay(100);
+// send the sensor to save the finger print to the buffer
+FINGERPRINT_Cmd_Img_To_Buffer1();
+HAL_Delay(100);
+ FPM10A_Receive_Data(12);
+lcd_send_string("Successful entry");
+lcd_put_cur(1, 0);
+HAL_Delay(3000);
+lcd_clear();
+// notify the user again to put his finger
+lcd_send_string(" ADD FINGER ");
+  HAL_Delay(3000);
+FPM10A_Cmd_Get_Img();
+HAL_Delay(100);
+FPM10A_Receive_Data(12);
+HAL_Delay(100);
+lcd_clear();
+// if the packet saved suucessfully
+if(FPM10A_RECEICE_BUFFER[9]==0)
+{
+HAL_Delay(2000);
+lcd_send_string("Successful entry");
+lcd_put_cur(1, 0);
+// assign a unique ID to each user
+lcd_send_string(" ID is " );
+char currID = finger_id + 48;
+lcd_send_data(currID);
+FINGERPRINT_Cmd_Img_To_Buffer2();
+HAL_Delay(100);
+  FPM10A_Receive_Data(12);
+FPM10A_Cmd_Reg_Model();//??????
+HAL_Delay(100);
+        FPM10A_Receive_Data(12);
+ 
+            HAL_Delay(100);
+         
+HAL_Delay(3000);
+finger_id=finger_id+1;
+HAL_Delay(3000);
+            lcd_clear();
+
+  }
+else if( FPM10A_RECEICE_BUFFER[9]==2)
+
+{
+lcd_send_string("Fail to detect");
+HAL_Delay(3000);
+            lcd_clear();
+
+}
+else
+lcd_send_string("Nothing happened");
+ HAL_Delay(3000);
+            lcd_clear();
+  }
+    else if( FPM10A_RECEICE_BUFFER[9]==2)
+
+{
+ lcd_send_string("Fail to detect2");
+HAL_Delay(3000);
+            lcd_clear();
+
+}
+else
+{
+lcd_send_string("Nothing happened");
+}
+```
 ## Implemented and Tested commands:
 We implement and test the Registration process to add a new fingerprint to the sensor. In order to do so we send a registration command to the sensor as follows
 
@@ -70,7 +155,7 @@ After interfacing the sensor with the STM32 we interface our system with LCD to 
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/WhatsApp%20Image%202021-12-04%20at%2012.19.56%20AM.jpeg)
 
-## - PN532 Sensor
+## PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/NFC_Module.jpg)
@@ -83,7 +168,7 @@ We also need to mention that in the STM32 CubeMx configuration, the Prescaler in
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/NFC_ProtoType.jpg)
 
-## - ESP32 and Telegram 
+## ESP32 and Telegram 
 ESP32 module is used in the project to support WIFI connectivity and enable the communication with the admin of the system at all times. The admin of the system will be notified through the ESP32 module of any fraud activity detected at the site being monitored. Fraud activity is indicated by having three unsuccessful fingerprint scans in a row. In this case, the STM32 μC will set a GPIO pin (flag pin) to one once the count of unsuccessful scans reaches 3. This flag pin will be the input of a GPIO pin in the ESP32 module and will be read continuously in the code of the ESP module to push a notification to the admin through Telegram to alert him of what’s happening at the site as shown in the diagram below.
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/esp.png)
