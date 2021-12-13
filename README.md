@@ -35,6 +35,8 @@ This project aims to implement a biometric-based authentication system that uses
 For our system Design, we made use of input modules such as the JM101-B FingerPrint sensor, the push buttons to check the validity of a the scanned finger, or to add a new finger to the system. We are using two STM32 Nucleo boards to configure, manage and implement our system. The first is purely used for both the LCD as well as the fingerPrint sensor. The second board is used for the implementation of the SPI configuration of the PN532 sensor. Our outputs are mainly the led's either green for success or red for failure. Also, the pushed notifications to the admin's telegram to notify in case of three time unsuccessful attempts.
 
 ## Overall System Activity Diagram 
+The activity diagram of the main system represents the very high level flow of the program. At the very beginning, if the FP system is working properly, the FP sensor will be the main system used for authentication. If there are any problems with the FP sensor, the NFC system will be used as the fail safe system to authenticate the users and replace the functionality of the FP sensor temporarily not to cause any inconveniences for users.
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/All%20system.png)
 
 ## Main system Activity Design
