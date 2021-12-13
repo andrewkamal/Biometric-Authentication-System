@@ -84,6 +84,7 @@ After interfacing the sensor with the STM32 we interface our system with LCD to 
 ## Main System connections and Setup:
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/mainsys.jpeg)
+
 ## the component used: 
 - LCD: act like a user interface to notify the users how to deal with the sensor
 - JM101B Sensor:  biometric fingerprint sensor which add and verify users according to their fingerprints
@@ -125,7 +126,7 @@ Declare_normal_state
 Get_state
 
 A picture of the working bot on the admin's phone and all the supporting commands are attached below
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.png)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.jpeg)
 
 ## LCD Connections with the STM32 Board
 
