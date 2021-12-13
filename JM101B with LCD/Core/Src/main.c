@@ -112,17 +112,15 @@ static void MX_TIM1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
-uint8_t FPM10A_Get_Device[10] ={0x01,0x00,0x07,0x13,0x00,0x00,0x00,0x00,0x00,0x1b};//????
-uint8_t FPM10A_Pack_Head[6] = {0xEF,0x01,0xFF,0xFF,0xFF,0xFF};  //????
-uint8_t FPM10A_Get_Img[6] = {0x01,0x00,0x03,0x01,0x00,0x05};    //??????
-uint8_t FPM10A_Get_Templete_Count[6] ={0x01,0x00,0x03,0x1D,0x00,0x21 }; //??????
-uint8_t FPM10A_Search[11]={0x01,0x00,0x08,0x04,0x01,0x00,0x00,0x03,0xE7,0x00,0xF8}; //????????0 - 999,??BUFFER1???????
-uint8_t FPM10A_Search_0_9[11]={0x01,0x00,0x08,0x04,0x01,0x00,0x00,0x00,0x13,0x00,0x21}; //??0-9???
-uint8_t FPM10A_Img_To_Buffer1[7]={0x01,0x00,0x04,0x02,0x01,0x00,0x08}; //??????BUFFER1
-uint8_t FPM10A_Img_To_Buffer2[7]={0x01,0x00,0x04,0x02,0x02,0x00,0x09}; //??????BUFFER2
-uint8_t FPM10A_Reg_Model[6]={0x01,0x00,0x03,0x05,0x00,0x09}; //?BUFFER1?BUFFER2??????
-uint8_t FPM10A_Delete_All_Model[6]={0x01,0x00,0x03,0x0d,0x00,0x11};//????????????
-uint8_t FPM10A_Save_Finger[9]={0x01,0x00,0x06,0x06,0x01,0x00,0x0B,0x00,0x19};//?BUFFER1?????????????
+
+uint8_t FPM10A_Pack_Head[6] = {0xEF,0x01,0xFF,0xFF,0xFF,0xFF}; 
+uint8_t FPM10A_Get_Img[6] = {0x01,0x00,0x03,0x01,0x00,0x05};    
+uint8_t FPM10A_Search[11]={0x01,0x00,0x08,0x04,0x01,0x00,0x00,0x03,0xE7,0x00,0xF8}; 
+uint8_t FPM10A_Search_0_9[11]={0x01,0x00,0x08,0x04,0x01,0x00,0x00,0x00,0x13,0x00,0x21}; 
+uint8_t FPM10A_Img_To_Buffer1[7]={0x01,0x00,0x04,0x02,0x01,0x00,0x08};
+uint8_t FPM10A_Img_To_Buffer2[7]={0x01,0x00,0x04,0x02,0x02,0x00,0x09}; 
+uint8_t FPM10A_Reg_Model[6]={0x01,0x00,0x03,0x05,0x00,0x09};
+uint8_t FPM10A_Save_Finger[9]={0x01,0x00,0x06,0x06,0x01,0x00,0x0B,0x00,0x19};
 
 void FPM10A_Cmd_Send_Pack_Head(void)
 {
@@ -137,10 +135,10 @@ void FPM10A_Cmd_Get_Img(void)
 {
     unsigned char i;
     FPM10A_Cmd_Send_Pack_Head(); //????????
-    for(i=0;i<6;i++) //???? 0x1d
+    for(i=0;i<6;i++) 
 		{
 				HAL_UART_Transmit(&huart1, &FPM10A_Get_Img[i],1,10000);
-			//	HAL_UART_Transmit(&huart2, &FPM10A_Get_Img[i], 1, 1000);
+		
 		}
 }
 
@@ -150,7 +148,7 @@ void FPM10A_Receive_Data(unsigned char ucLength)
 
 
 		HAL_UART_Receive(&huart1,FPM10A_RECEICE_BUFFER, 12,1000);
-	//	HAL_UART_Transmit(&huart2, &FPM10A_RECEICE_BUFFER[i], 1, 1000);
+
 	 
 
 }
@@ -159,7 +157,7 @@ void FPM10A_Cmd_Reg_Model(void)
 {
        unsigned char i;	   
 	    
-			 FPM10A_Cmd_Send_Pack_Head(); //????????
+			 FPM10A_Cmd_Send_Pack_Head(); 
 
        for(i=0;i<6;i++)
        {
@@ -368,14 +366,14 @@ int main(void)
 					 // send the sensor to save the finger print to the buffer 
 					FINGERPRINT_Cmd_Img_To_Buffer1();
 					HAL_Delay(100);
-				  FPM10A_Receive_Data(12);
+				        FPM10A_Receive_Data(12);
 					lcd_send_string("Successful entry");
 					lcd_put_cur(1, 0);
 					HAL_Delay(3000);
 					lcd_clear();
 					// notify the user again to put his finger 
 					lcd_send_string(" ADD FINGER ");
-			  	HAL_Delay(3000);
+			  	         HAL_Delay(3000);
 					 FPM10A_Cmd_Get_Img(); 
 					 HAL_Delay(100);
 					 FPM10A_Receive_Data(12);
