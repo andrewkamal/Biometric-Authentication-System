@@ -29,13 +29,20 @@ This project aims to implement a biometric-based authentication system that uses
 
 ## System Design
 
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/updated_system_diagram.png)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/final%20ACdiagram.png)
 
 For our system Design, we made use of input modules such as the JM101-B FingerPrint sensor, the push buttons to check the validity of a the scanned finger, or to add a new finger to the system. We are using two STM32 Nucleo boards to configure, manage and implement our system. The first is purely used for both the LCD as well as the fingerPrint sensor. The second board is used for the implementation of the SPI configuration of the PN532 sensor. Our outputs are mainly the led's either green for success or red for failure. Also, the pushed notifications to the admin's telegram to notify in case of three time unsuccessful attempts.
 
-## Activity Design
+## Overall System Activity Diagram 
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/All%20system.png)
 
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity_diagram.png)
+## Main system Activity Design
+
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/system1.png)
+
+
+## Fail Safe Activity Duagrm 
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/nfc.png)
 
 ## JM101B Sensor
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the microcontroller and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
