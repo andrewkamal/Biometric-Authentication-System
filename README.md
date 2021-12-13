@@ -55,13 +55,6 @@ The fingerprint module used in this project is of type JM101-B (datasheet attach
 ## Main System connections and Setup:
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
 
-the component used: 
-LCD: act like a user interface to notify the users how to deal with the sensor
-JM101B Sensor:  biometric fingerprint sensor which add and verify users according to their fingerprints
-Push Buttons: there are 2 push buttons which help the user to choose from one of the modes ( ADD or Verify)
-Leds: two leds; the red indicates Access Denied and the red indicates access Granted 
-Potentiometer: to udjust the contrast of the LCD 
-
 
 ## Supported commands:
 - Registration (Add Fingerprint)
@@ -88,7 +81,15 @@ Failure to generate feature → 0x02
 
 After interfacing the sensor with the STM32 we interface our system with LCD to act as a user interface. 
 
+## Main System connections and Setup:
+
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/mainsys.jpeg)
+## the component used: 
+- LCD: act like a user interface to notify the users how to deal with the sensor
+- JM101B Sensor:  biometric fingerprint sensor which add and verify users according to their fingerprints
+- Push Buttons: there are 2 push buttons which help the user to choose from one of the modes ( ADD or Verify)
+- Leds: two leds; the red indicates Access Denied and the red indicates access Granted 
+- Potentiometer: to udjust the contrast of the LCD 
 
 ## PN532 Sensor
 Our Near Field Communication (NFC) sensor is the PN532 using V3 Module. The PN532 was not the only module we came across in the market, we also stumbled upon the RC522 when looking for one to buy. When comparing between both sensors, we figured that the PN532 module supports SPI, I2C, and UART communication, while the RC522 only supports SPI. In addition to the NFC reading, the SPI supports both RFID read and write. Hence, we moved forward with the former and chose the SPI configuration instead of the I2C.
