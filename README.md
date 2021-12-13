@@ -102,7 +102,7 @@ After thoroughly investigating the PN532 datasheet, we discovered that according
 
 We also need to mention that in the STM32 CubeMx configuration, the Prescaler in TIM2 was set to 720, and the AutoReloadRegister (ARR) to 1999. The SPI1 was set to Full-Duplex Master Mode, with a data size of 8 Bits instead of the default 4 and follows an LSB First not MSB. The clock parameters of the SPI1 was set for 128 in Prescaler to support 562.5 KBits/s. It is recommended to allow a high level of Prescaler here since when we tried to configure the system when it was low, the sensor did not function properly as it should. To display the uid that is read with the sensor, we enabled USART2 to display what is read in TeraTerm. Nevertheless, in the GPIO settings, we added one GPIO input to the RST state and then we added another that was not used in case we needed to configure a button for a certain task. Also, we included four GPIO outputs for the IRQ, SS, the Green and the Red LEDS, where one indicates success while the other indicates failure. The Clock configuration was set to 72 Mhz instead of the max 80 Mhz to settle the APB to a certain value that is supported by the sensor.
 
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/NFC_ProtoType.jpg)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/NFC_Connection_Updated.jpeg)
 
 The following is an example of the output whenever any reading is taken by the NFC sensor. As shown below, it can either grant access or deny it based on the uid reading while taking in consideration if it is registered or not.
 
