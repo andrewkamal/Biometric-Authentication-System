@@ -31,6 +31,8 @@ This project aims to implement a biometric-based authentication system that uses
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/updated_system_diagram.png)
 
+For our system Design, we made use of input modules such as the JM101-B FingerPrint sensor, the push buttons to check the validity of a the scanned finger, or to add a new finger to the system. We are using two STM32 Nucleo boards to configure, manage and implement our system. The first is purely used for both the LCD as well as the fingerPrint sensor. The second board is used for the implementation of the SPI configuration of the PN532 sensor. Our outputs are mainly the led's either green for success or red for failure. Also, the pushed notifications to the admin's telegram to notify in case of three time unsuccessful attempts.
+
 ## Activity Design
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/Activity_diagram.png)
@@ -190,8 +192,11 @@ Get_state
 
 ## Slides
 Milestone 1 (Intial Presentation): [Link](https://docs.google.com/presentation/d/1zvmKQrSaM8J1B9W9fq0iGHN_LQyvAFlY/edit#slide=id.p1)
+
 Milestone 2 (Progress Presentation 1): [Link](https://docs.google.com/presentation/d/18PbApuCLR6rVmSS4hLHxZogK3drjYBY5/edit#slide=id.p1)
+
 Milestone 3 (Progress Presentation 2): [Link](https://docs.google.com/presentation/d/1OdqsuPTCykq9MJpy14oOrDOri2u-x1Vt/edit#slide=id.p1)
+
 Milestone 4 (Final Presentation):
 
 ## References
