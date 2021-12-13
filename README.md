@@ -11,14 +11,14 @@ Github repo: https://github.com/andrewkamal/Biometric-Authentication-System
 This project aims to implement a biometric-based authentication system that uses a fingerprint sensor to authenticate users into any physical space. The system is controlled by an admin who can communicate with the system all the time through a wifi chip that is integrated into the system and is controlled by the admin through Telegram. The admin of the system is alerted through Telegram if a fraud activity gets detected at the site. Fraud activities in these scenarios are indicated by having an unsuccessful fingerprint three times in a row.
 
 ## Hardware Requirements
-- ESP32
-- Nucleo STM32 Board
-- Potentiometer
-- JM101-B FingerPrint Sensor
-- LCD
-- Push Buttons
-- LEDs
-- PN532
+- 1 ESP32
+- 1 Nucleo STM32 Board
+- 1 Potentiometer
+- 1 JM101-B FingerPrint Sensor
+- 1 LCD
+- 2 Push Buttons
+- 4 LEDs
+- 1 PN532
 
 ## Software Requirements
 
