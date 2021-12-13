@@ -130,6 +130,9 @@ Interfacing the fingerprint sensor with the LCD: https://drive.google.com/file/d
 Fraud Detection through Telegram: https://drive.google.com/file/d/1GCFsPM2aAPnpM03C57JtzW5-_HOmkuVY/view?usp=sharing
 NFC Module: https://drive.google.com/file/d/1vV_LXz9GBeB0cCzsBTUuMgCg0iYOknQe/view?usp=sharing
 
+## Finlal Submission:
+please refer to the Demo: [Link](https://drive.google.com/drive/my-drive)
+
 ## Slides
 Milestone 1 (Intial Presentation): [Link](https://docs.google.com/presentation/d/1zvmKQrSaM8J1B9W9fq0iGHN_LQyvAFlY/edit#slide=id.p1)
 
