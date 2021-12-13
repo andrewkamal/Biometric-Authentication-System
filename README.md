@@ -125,7 +125,7 @@ Declare_normal_state
 Get_state
 
 A picture of the working bot on the admin's phone and all the supporting commands are attached below
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.png)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.jpeg)
 
 ## Demos
 Milestone 3 (Demos): 
