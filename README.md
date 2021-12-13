@@ -7,8 +7,8 @@
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/door%20lock.jpg)
 
-A biometric sytem that takes optical fingerprint as input to authenticate the user and in return open an electric lock, as well as register the time the user came in.
-In addtion, we alert the admin using an alarm and a wifi chip if there is a user trying to access the facility with three times unrecognized fingerprints scans in a row.
+This project aims to implement a biometric-based authentication system that uses a fingerprint sensor to authenticate users into any physical space. The system is controlled by an admin who can communicate with the system all the time through a wifi chip that is integrated into the system and is controlled by the admin through Telegram. The admin of the system is alerted through Telegram if a fraud activity gets detected at the site. Fraud activities in these scenarios are indicated by having an unsuccessful fingerprint three times in a row.
+
 ## Hardware Requirements
 - ESP32
 - Nucleo STM32 Board
@@ -195,6 +195,13 @@ Milestone 3 (Progress Presentation 2): [Link](https://docs.google.com/presentati
 Milestone 4 (Final Presentation):
 
 ## References
+https://3v3.com.ua/data/files/JM-101-OPTICAL-FINGERPRINT-MODULE-USER-MANUAL-V1.8A.PDF
+
+http://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf
+
+https://www.openhacks.com/uploadsproductos/r307_fingerprint_module_user_manual.pdf
+
+https://funduino.de/DL/1602LCD.pdf
 
 
 
