@@ -42,7 +42,7 @@ For our system Design, we made use of input modules such as the JM101-B FingerPr
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/system1.png)
 
 
-## Fail Safe Activity Duagrm 
+## Fail Safe Activity Diagrm 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/nfc.png)
 
 ## JM101B Sensor
