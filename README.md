@@ -126,11 +126,13 @@ Get_state
 
 ## Demos
 Milestone 3 (Demos): 
-Interfacing the fingerprint sensor with the LCD: https://drive.google.com/file/d/1GA7guuEns3KkpbxFE4PJ1iBcuDGD7kZa/view?usp=sharing
-Fraud Detection through Telegram: https://drive.google.com/file/d/1GCFsPM2aAPnpM03C57JtzW5-_HOmkuVY/view?usp=sharing
-NFC Module: https://drive.google.com/file/d/1vV_LXz9GBeB0cCzsBTUuMgCg0iYOknQe/view?usp=sharing
+Interfacing the fingerprint sensor with the LCD: [Link](https://drive.google.com/file/d/1GA7guuEns3KkpbxFE4PJ1iBcuDGD7kZa/view?usp=sharing)
 
-## Finlal Submission:
+Fraud Detection through Telegram: [Link](https://drive.google.com/file/d/1GCFsPM2aAPnpM03C57JtzW5-_HOmkuVY/view?usp=sharing)
+
+NFC Module: [Link](https://drive.google.com/file/d/1vV_LXz9GBeB0cCzsBTUuMgCg0iYOknQe/view?usp=sharing)
+
+## Final Submission:
 please refer to the Demo: [Link](https://drive.google.com/drive/my-drive)
 
 ## Slides
