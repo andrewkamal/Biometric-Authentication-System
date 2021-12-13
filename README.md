@@ -77,7 +77,7 @@ Failure to generate feature → 0x02
 
 ## CubMX project: 
 
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/CubMX.PNG)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/newCubmx.PNG)
 
 After interfacing the sensor with the STM32 we interface our system with LCD to act as a user interface. 
 
@@ -125,7 +125,7 @@ Declare_normal_state
 Get_state
 
 A picture of the working bot on the admin's phone and all the supporting commands are attached below
-![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.jpeg)
+![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.png)
 
 ## Demos
 Milestone 3 (Demos): 
