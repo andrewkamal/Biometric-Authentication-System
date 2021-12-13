@@ -49,9 +49,17 @@ For our system Design, we made use of input modules such as the JM101-B FingerPr
 The fingerprint module used in this project is of type JM101-B (datasheet attached below),  it uses UART protocol to communicate with the microcontroller (STM32). The communication is done by having the microcontroller transmit a particular command ( the available commands are described below in details) to the Sensor and the sensor then generates an acknowledgment packet that acknowledges the receipt of the command packet sent from the microcontroller and indicates whether the command has been processed successfully and did the intended function or not through the confirmation byte (byte 9) that is included in the acknowledgment frame.
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/FP_.jpg)
-## The communication between the STM32 and the sensor:
+## Main System connections and Setup:
 
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/JM101B.PNG)
+
+the component used: 
+LCD: act like a user interface to notify the users how to deal with the sensor
+JM101B Sensor:  biometric fingerprint sensor which add and verify users according to their fingerprints
+Push Buttons: there are 2 push buttons which help the user to choose from one of the modes ( ADD or Verify)
+Leds: two leds; the red indicates Access Denied and the red indicates access Granted 
+Potentiometer: to udjust the contrast of the LCD 
+
 
 ## Supported commands:
 - Registration (Add Fingerprint)
