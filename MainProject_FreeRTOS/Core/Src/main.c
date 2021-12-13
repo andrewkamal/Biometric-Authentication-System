@@ -277,7 +277,7 @@ void FPM10A_Find_Fingerprint()
 		HAL_Delay(100);
 		FPM10A_Receive_Data(16);
 		// if Recieved successfully 
-		if(FPM10A_RECEICE_BUFFER[9] == 0) //???  
+		if(FPM10A_RECEICE_BUFFER[9] == 0)
 		{
 			HAL_Delay(100);
 			lcd_send_string("Access Granted ");
@@ -706,7 +706,7 @@ void StartAddFP(void *argument)
 						FINGERPRINT_Cmd_Img_To_Buffer2();
 						HAL_Delay(100);
 				  	FPM10A_Receive_Data(12);
-						FPM10A_Cmd_Reg_Model();//??????
+						FPM10A_Cmd_Reg_Model();
 						HAL_Delay(100);
 	         	FPM10A_Receive_Data(12); 
 					  
