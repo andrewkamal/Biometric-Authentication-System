@@ -142,7 +142,7 @@ Milestone 2 (Progress Presentation 1): [Link](https://docs.google.com/presentati
 
 Milestone 3 (Progress Presentation 2): [Link](https://docs.google.com/presentation/d/1OdqsuPTCykq9MJpy14oOrDOri2u-x1Vt/edit#slide=id.p1)
 
-Milestone 4 (Final Presentation):
+Milestone 4 (Final Presentation): [Link](https://docs.google.com/presentation/d/1NLhvfGiLwZ7oxhbd5B8Zf40z2_y3UmaMpPtBPBASaK4/edit#slide=id.g105a6a69d26_1_49)
 
 ## References
 [1] JM-101 optical fingerprint module user manual - 3V3. (n.d.). Retrieved December 13, 2021, from https://3v3.com.ua/data/files/JM-101-OPTICAL-FINGERPRINT-MODULE-USER-MANUAL-V1.8A.PDF. 
