@@ -127,6 +127,10 @@ Get_state
 A picture of the working bot on the admin's phone and all the supporting commands are attached below
 ![alt text](https://github.com/andrewkamal/Biometric-Authentication-System/blob/main/Images/bot.png)
 
+## LCD Connections with the STM32 Board
+
+The LCD is connected to the STM32 through 7 output pins going from PA1 till PA7. The JM101-b is connected to the STM32 in the UART's TX and RX through PA9 & PA10. Also, we have to output pins connected to the two buttons for each task. In addition, an output pin connected with the ESP-32 to notify once fraud is detected. There are two leds connected for verifications. Finally, a potentiometer connected with the LCD for brightness adjustment. 
+
 ## Demos
 Milestone 3 (Demos): 
 Interfacing the fingerprint sensor with the LCD: [Link](https://drive.google.com/file/d/1GA7guuEns3KkpbxFE4PJ1iBcuDGD7kZa/view?usp=sharing)
