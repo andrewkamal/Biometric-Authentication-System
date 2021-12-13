@@ -143,13 +143,12 @@ Milestone 3 (Progress Presentation 2): [Link](https://docs.google.com/presentati
 Milestone 4 (Final Presentation):
 
 ## References
-https://3v3.com.ua/data/files/JM-101-OPTICAL-FINGERPRINT-MODULE-USER-MANUAL-V1.8A.PDF
+[1] JM-101 optical fingerprint module user manual - 3V3. (n.d.). Retrieved December 13, 2021, from https://3v3.com.ua/data/files/JM-101-OPTICAL-FINGERPRINT-MODULE-USER-MANUAL-V1.8A.PDF. 
 
-http://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf
+[2] Elechouse. (n.d.). Retrieved December 13, 2021, from http://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf. 
 
-https://www.openhacks.com/uploadsproductos/r307_fingerprint_module_user_manual.pdf
+[3] R307 finger print module user manual - OpenHacks. (n.d.). Retrieved December 13, 2021, from https://www.openhacks.com/uploadsproductos/r307_fingerprint_module_user_manual.pdf. 
 
-https://funduino.de/DL/1602LCD.pdf
-
+[4] 1602 a instructions - funduino. de. (n.d.). Retrieved December 13, 2021, from https://funduino.de/DL/1602LCD.pdf. 
 
 
